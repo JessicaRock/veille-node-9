@@ -40,16 +40,19 @@ function traiterRequest(e) {
 			let oTd = document.createElement("td");
 			oTd.innerHTML = elm;
 			oTr.appendChild(oTd);
+			oTd.contenteditable = true;
+			//oTr.children[oTr.children.length-1].attributes['contenteditable'] = true;
+			console.log(oTr.children[oTr.children.length-1]);
 		}
-		oTr.innerHTML += "<td><a href='#'' class='modifier'> <%= __('modifier') %></a></td><td><a><%= __('supprimer') %></a></td>";
+		oTr.innerHTML += "<td><a href='#'' class='modifier'> <%= __('modifier') %></a></td><td><a class='supprimer' ><%= __('supprimer') %></a></td>";
 
 		oTr.style.backgroundColor = '#62bdce';
 
 
-		oTab.appendChild(oTr);
+		oTab.children[0].appendChild(oTr);
 
-		let oBtnModifier = document.getElementById('modifier')
-		let oBtnSupprimer = document.getElementById('supprimer')
+		modifier();
+		supprimer();
 
 
 	}
