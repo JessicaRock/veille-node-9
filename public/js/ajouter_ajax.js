@@ -39,7 +39,9 @@ function traiterRequest(e) {
 		for(elm of aMembre) {
 			let oTd = document.createElement("td");
 			oTd.innerHTML = elm;
-			oTd.setAttribute('contenteditable', true);
+			if(aMembre.indexOf(elm) != 0) {
+				oTd.setAttribute('contenteditable', true);
+			}
 			oTr.appendChild(oTd);
 		}
 		oTr.innerHTML += "<td><a href='#'' class='modifier'> <%= __('modifier') %></a></td><td><a class='supprimer' ><%= __('supprimer') %></a></td>";
