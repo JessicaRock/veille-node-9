@@ -51,8 +51,13 @@ function modifier() {
 			for(elm of aTr) {
 				let sId = elm.querySelector('td');
 				if(sId != null && sId.innerHTML == maReponse['_id']) {
-					console.log('okokokok');
-					elm.style.backgroundColor = '#62bdce';
+					console.log(elm.style.backgroundColor);
+					if(elm.style.backgroundColor == 'rgb(98, 189, 206)') {
+						elm.style.backgroundColor = '#7dd2e2';
+					} else {
+						elm.style.backgroundColor = '#62bdce';
+					}
+
 				}
 			}
 
